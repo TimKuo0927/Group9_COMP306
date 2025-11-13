@@ -1,0 +1,42 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+packages/
+*.bak
+*.tmp
+
+# Other files
+*.dbmdl
+*.bak
+*.log
+*.tlog
+*.pdb
+
+# Publish output
+publish/
+*.Publish.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Sensitive configs
+group9_GroupProject/appsettings.*.json
+group9_GroupProject/secrets.json
+group9_GroupProject/.env

@@ -1,0 +1,6 @@
+@group9_GroupProject_HostAddress = http://localhost:5243
+
+GET {{group9_GroupProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
