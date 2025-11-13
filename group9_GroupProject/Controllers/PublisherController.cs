@@ -52,9 +52,9 @@ namespace group9_GroupProject.Controllers
 
         // PUT api/<PublisherController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<GetPublisherDto>> Put(int id, [FromBody] PostPublisherDto postPublisherDto)
+        public async Task<ActionResult<GetPublisherDto>> Put(int id, [FromBody] PutPublisherDto putPublisherDto)
         {
-            var publisher = _mapper.Map<Publisher>(postPublisherDto);
+            var publisher = _mapper.Map<Publisher>(putPublisherDto);
             var result = await _publisherRepository.UpdatePublisherAsync(id,publisher);
             if(result == null)
             {

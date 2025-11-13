@@ -39,13 +39,13 @@ namespace group9_GroupProject.Controllers
             return Ok(bookDtos);
         }
 
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<GetBookDto>> GetDetailsById(int id)
-        //{
-        //    var books = await _bookRepository.GetBookByIdAsync(id);
-        //    var bookDtos = _mapper.Map<GetBookDto>(books);
-        //    return Ok(bookDtos);
-        //}
+        [HttpGet("{id}/details")]
+        public async Task<ActionResult<GetBookDetailDto>> GetDetailsById(int id)
+        {
+            var bookDetail = await _bookRepository.GetBookDetailByIdAsync(id);
+            var bookDtos = _mapper.Map<GetBookDetailDto>(bookDetail);
+            return Ok(bookDtos);
+        }
 
         // POST api/<BookCategoryController>
         [HttpPost]

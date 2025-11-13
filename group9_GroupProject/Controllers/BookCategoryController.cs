@@ -50,9 +50,9 @@ namespace group9_GroupProject.Controllers
 
         // PUT api/<BookCategoryController>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<GetBookCategoryDto>> Put(int id, [FromBody] PostBookCategoryDto postBookCategoryDto)
+        public async Task<ActionResult<GetBookCategoryDto>> Put(int id, [FromBody] PutBookCategoryDto putBookCategoryDto)
         {
-            var categories = _mapper.Map<BookCategory>(postBookCategoryDto);
+            var categories = _mapper.Map<BookCategory>(putBookCategoryDto);
             var result = await _bookCategoryRepository.UpdateBookCategoryAsync(id, categories);
             if (result == null)
             {

@@ -1,4 +1,5 @@
 ﻿
+using group9_GroupProject.DTO;
 using group9_GroupProject.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -62,7 +63,10 @@ namespace group9_GroupProject.Services
         {
             return await _db.Books.Where(b => b.BookId == bookId).FirstOrDefaultAsync();
         }
-
+        public async Task<Book?> GetBookDetailByIdAsync(int bookId)
+        {
+            return await _db.Books.Where(x=>x.BookId==bookId).Include(x=>x.Publisher).Include(x=>x.Category).FirstOrDefaultAsync();
+        }
         public async Task<Book?> PatchBookAsync(int bookId, Dictionary<string, object> updates)
         {
             var book = await _db.Books.FirstOrDefaultAsync(b => b.BookId == bookId);
